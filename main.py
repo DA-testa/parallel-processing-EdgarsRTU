@@ -5,7 +5,7 @@ def parallel_processing(n, m, data):
     W = [(0, i) for i in range(n)]
     heapq.heapify(W)
     for i in range(m):
-        time = data[i]
+        laiks = data[i]
         a_laiks, W = heapq.heappop(W)
         if output:
             b_laiks = max(a_laiks, output[-1][1])
