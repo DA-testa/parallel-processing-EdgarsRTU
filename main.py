@@ -5,15 +5,15 @@ def parallel_processing(n, m, data):
     W = [(0, i) for i in range(n)]
     heapq.heapify(W)
     for i in range(m):
-        laiks = data[i]
-        a_laiks, W = heapq.heappop(W)
+        time = data[i]
+        a_time, W = heapq.heappop(W)
         if output:
-            b_laiks = max(a_laiks, output[-1][1])
+            b_time = max(a_time, output[-1][1])
         else:
-            b_laiks = a_laiks
-        a_laiks = b_laiks + laiks
-        output.append((W, b_laiks))
-        heapq.heappush(W, (a_laiks, W))
+            b_time = a_time
+        a_time = b_time + time
+        output.append((W, b_time))
+        heapq.heappush(W, (a_time, W))
     return output
  
  
@@ -23,8 +23,8 @@ def main():
  
     result = parallel_processing(n, m, data)
  
-    for W, b_laiks in result:
-        print(W, b_laiks)
+    for W, b_time in result:
+        print(W, b_time)
  
  
 if __name__ == "__main__":
