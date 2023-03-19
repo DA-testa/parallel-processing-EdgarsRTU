@@ -1,19 +1,19 @@
-import heapq
+mport heapq
  
 def parallel_processing(n, m, data):
     output = []
-    pabi = [(0, i) for i in range(n)]
-    heapq.heapify(pabi)
+    pavedieni = [(0, i) for i in range(n)]
+    heapq.heapify(pavedieni)
     for i in range(m):
-        laiks = data[i]
-        a_laiks, pabs = heapq.heappop(pabi)
+        time = data[i]
+        g_time, pavediens = heapq.heappop(pavedieni)
         if output:
-            b_laiks = max(a_laiks, output[-1][1])
+            y_time = max(g_time, output[-1][1])
         else:
-            b_laiks = a_laiks
-        a_laiks = b_laiks + laiks
-        output.append((pabs, b_laiks))
-        heapq.heappush(pabi, (a_laiks, pabs))
+            y_time = g_time
+        g_time = y_time + time
+        output.append((pavediens, y_time))
+        heapq.heappush(pavedieni, (g_time, pavediens))
     return output
  
  
@@ -23,11 +23,11 @@ def main():
  
     result = parallel_processing(n, m, data)
  
-    for pabs, b_laiks in result:
-        print(pabs, b_laiks)
+    for pavediens, y_time in result:
+        print(pavediens, y_time)
  
  
-if __name__ == "__main__":
+if name == "main":
     main()
 
   #Edgars Miklaševičs
